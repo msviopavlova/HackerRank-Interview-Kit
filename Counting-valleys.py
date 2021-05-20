@@ -45,21 +45,13 @@ def countingValleys(steps, path):
     for steps, p in enumerate(path):
         if p == "U":
             level = level + 1
-            if level > 0:
-                print(f"mountain step {level}")
-            elif level == 0:
-                print("SEA after VALLEY")
-                valleys = valleys + 1
-                print(f"{valleys} valleys")
+            if level == 0:
+               valleys = valleys + 1
         elif p == "D":
             level = level - 1
-            if level < 0:
-                print(f"we are in VALLEY {level}")
-            elif level == 0:
-                print("SEA after MOUNTAIN")
-    print(f"{valleys} valleys")
+    return valleys
 
-countingValleys(16, "DDUUUUDDDDUUUUDD")
+print(countingValleys(16, "DDUUUUDDDDUUUUDD"))
 
 
 
