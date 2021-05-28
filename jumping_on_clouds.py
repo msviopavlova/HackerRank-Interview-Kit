@@ -7,6 +7,8 @@ def clouds(c):
             if count == 0:
                 continue
             elif value == 0:
+                if c[count-1]==1:
+                    jumps = jumps +1
                 if c[count + 2] == 0 and c[count+1] == 0:
                     continue
                 elif c[count +1] == 1:
