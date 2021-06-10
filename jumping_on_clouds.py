@@ -1,21 +1,21 @@
 
 def clouds(c):
     jumps = 0
+    current = 0
 
-    for count, value in enumerate(c):
-        if (count == 0 or count == c[-1]) and value == 0:
-            if c[count+1] == 0 and c[count+2] == 0:
-                count = count + 2
+    for _ in c:
+        while current < (len(c) - 1):
+            if c[current + 2] == 0:
+                current = current + 2
                 jumps = jumps + 1
-            if c[count+1] == 0 and c[count+2] == 1:
+            else:
+                current = current + 1
                 jumps = jumps + 1
-
 
     return jumps
 
 
-
-c = [0, 0, 1, 0, 0, 1, 0]
+c = [0, 0, 0, 1, 0, 0]
 
 print(clouds(c))
 
