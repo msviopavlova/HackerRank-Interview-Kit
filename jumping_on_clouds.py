@@ -4,13 +4,17 @@ def clouds(c):
     current = 0
 
     for _ in c:
-        while current < (len(c) - 1):
+        if (current + 1) < len(c)-2:
             if c[current + 2] == 0:
                 current = current + 2
                 jumps = jumps + 1
             else:
                 current = current + 1
                 jumps = jumps + 1
+        elif current == len(c) - 1:
+            if c[current] == 0:
+                jumps = jumps +1
+                current = current + 1
 
     return jumps
 
