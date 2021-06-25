@@ -1,22 +1,27 @@
-import math
-# Complete the 'sockMerchant' function below.
-#
-# The function is expected to return an INTEGER.
-# The function accepts following parameters:
-#  1. INTEGER n
-#  2. INTEGER_ARRAY ar
-#
+def sockMerchant(n, ar):
+    pairs = 0
+    unfinished = []
+    for char in ar:
+        if char in unfinished:
+            pairs += 1
+            unfinished.remove(char)
 
-def sockMerchant(count, ar):
-    for num in ar:
-        if len(set(ar)) == len(ar):
-            return 0
-        elif len(set(ar)) < len(ar):
-            difference = len(ar)-len(set(ar))
-            
+        elif char not in unfinished:
+            unfinished.append(char)
+
+    return pairs
 
 
 
 
-result = sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20])
-print(result)
+
+
+
+
+
+
+
+lol = [10, 20, 20, 10, 10, 30, 50, 10, 20]
+
+print(sockMerchant(9, lol))
+

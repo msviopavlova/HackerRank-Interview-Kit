@@ -17,13 +17,13 @@
 
 
 def repeatedString(s, n):
-    # Write your code here
+
     letters = []
     for char in s:
         if char == "a":
             letters.append(char)
     leftover = n % len(s)
-    print(f"{leftover} modulos")
+
     times = n // len(s)
     amountofains = len(letters)
     extras = []
